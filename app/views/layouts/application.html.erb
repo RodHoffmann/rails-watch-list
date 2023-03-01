@@ -11,6 +11,13 @@
   </head>
 
   <body>
-    <%= yield %>
+      <%= render 'shared/navbar' %>
+      <div class="banner">
+        <div class="container text-center">
+          <h1><strong>Save any kind of movies</strong></h1>
+          <p>...and maybe watch them too!</p>
+        </div>
+      </div>
+      <%= yield %>
   </body>
 </html>

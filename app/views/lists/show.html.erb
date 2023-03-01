@@ -1,9 +1,8 @@
-<div class="container">
   <h1><%=  @list.name  %></h1>
-  <ul>
     <% @list.movies.each do |movie| %>
-    <li><%= movie.title %></li>
+      <div class="card-category">
+        <%= movie.title %>
+        <img src=<%= movie.poster_url %> alt=<%= movie.title %>>
+      </div>
     <% end %>
-  </ul>
   <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
-</div>
