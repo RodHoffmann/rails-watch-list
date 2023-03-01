@@ -1,19 +1,13 @@
 <div class="container">
   <h1><%= @list.name %></h1>
-  <% @movies.each do |movie| %>
-
   <ul>
 
       <li>
-        <%= simple_form_for(@bookmark) do |f| %>
-
-        <%= f.input :comment %>
-        <%= f.association :lists %>
-        <%= f.association :movies %>
-        <%= f.button :submit, "Add #{movie.title} to your list" %>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :comment %>
+          <%= f.association :movie %>
+          <%= f.button :submit, "Add movie to your list" %>
         <% end %>
       </li>
-
   </ul>
-  <% end %>
 </div>
