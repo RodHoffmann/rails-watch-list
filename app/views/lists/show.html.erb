@@ -1,8 +1,9 @@
   <h1><%=  @list.name  %></h1>
+  <div class="cards">
     <% @list.movies.each do |movie| %>
-      <div class="card-category">
+      <div class="card-category" style="background-image: url(<%= movie.poster_url %>)" >
         <%= movie.title %>
-        <img src=<%= movie.poster_url %> alt=<%= movie.title %>>
       </div>
     <% end %>
+  </div>
   <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
