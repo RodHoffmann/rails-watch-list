@@ -5,7 +5,8 @@
       <li>
         <%= simple_form_for [@list, @bookmark] do |f| %>
           <%= f.input :comment %>
-          <%= f.association :movie %>
+          <%= f.association :movie,
+              collection: Movie.order(:title) %>
           <%= f.button :submit, "Add movie to your list" %>
         <% end %>
       </li>

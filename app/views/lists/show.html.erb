@@ -1,17 +1,20 @@
 <div class="container">
-<h1><%=  @list.name  %></h1>
-<%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
-</div>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @list.movies.each do |movie| %>
-      <div class="col">
-        <div class="card h-100">
-          <img class="card-img-top card-image" src=<%= movie.poster_url %> alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title"><%= movie.title %></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
+  <div>
+  <h1><%=  @list.name  %></h1>
+  <%= @list.photo.key.nil? ? 'No image' : (cl_image_tag @list.photo.key) %>
+  </div>
+  <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% @list.movies.each do |movie| %>
+        <div class="col">
+          <div class="card h-100">
+            <img class="card-img-top card-image" src=<%= movie.poster_url %> alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= movie.title %></h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
 </div>
