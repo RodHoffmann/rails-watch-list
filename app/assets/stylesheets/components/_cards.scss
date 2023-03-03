@@ -38,3 +38,8 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.card-image {
+  height: 182px;
+  object-fit: cover;
+}
