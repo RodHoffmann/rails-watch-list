@@ -70,3 +70,6 @@ end
 
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+
+# To secure store keys
+gem 'dotenv-rails', groups: [:development, :test]
